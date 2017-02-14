@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap 101 Template</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/normalize.css" rel="stylesheet">
+    <link href="css/reset.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/angular.min.js"></script>
+    <script src="app/angular.module.js"></script>
+    <script src="app/angular.controller.js"></script>
+    <script src="js/angular-route.min.js"></script>
+    <!-- <link href="css/style.css" rel="stylesheet"> -->
+
+  </head>
+  <body>
+    <div class="container">
+      <div class="col-md-4 col-md-offset-4">
+        <div class="panel panel-default" ng-controller="productController">
+        <div class="panel-body">
+          <div class="prdItems">
+            <div ng-include="'product-head.html'">
+
+            </div>
+            <div class="prdImage">
+              <img class="img-responsive" src="images/nature-flowers.jpg" alt="">
+            </div>
+            <div class="tab-content">
+              <ul class="nav nav-tabs" role="tablist">
+                <li role="presentation" class="active"><a href="#description" aria-controls="description" role="tab" data-toggle="tab">Description</a></li>
+                <li role="presentation"><a href="#review" aria-controls="review" role="tab" data-toggle="tab">Review</a></li>
+              </ul>
+
+              <!-- Tab panes -->
+              <div class="tab-content">
+                <div role="tabpanel" class="tab-pane active" id="description">{{product.description}}</div>
+                <div role="tabpanel" class="tab-pane" id="review">
+                  <div class="" ng-repeat="ele in product.reviews">
+                    <h4>{{ele.name}}</h4><p>{{ele.review_text}}</p>
+                  </div>
+                  </div>
+              </div>
+            </div>
+            <div class="btn-control pull-right">
+              <button type="button" class="btn btn-success" data-toggle="button" aria-pressed="false" autocomplete="off" ng-show="product.availability_products > 0">Add To Cart</button>
+              <button type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off" disabled="disabled" ng-hide="product.availability_products > 0">Sold Out</button>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  </body>
+</html>

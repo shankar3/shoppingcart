@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12" ng-repeat="product in productList">
+    <div class="col-sm-2">
+      <h3>Image</h3>
+      <img src = "images/placeholder.png" alt="">
+    </div>
+
+    <div class="col-sm-6">
+      <div ng-include="'product-head.html'">
+      </div>
+    </div>
+    <div class="col-sm-2">
+        <button type="button" name="button" class="btn btn-info">Submit</button>
+    </div>
+  </div>
+</div>
+</div>
